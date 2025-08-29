@@ -22,8 +22,8 @@ h1, h2, h5 {
 /* --- Header (Hero Section) --- */
 header {
     position: relative;
-    height: 25vh;
-    min-height: 200px;
+    height: auto;
+    min-height: 300px;
     background-image: url('https://images.unsplash.com/photo-1507525428034-b723a9ce6890?q=80&w=2070&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
@@ -33,7 +33,7 @@ header {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 2rem;
+    padding: 3rem 2rem;
 }
 
 header::after {
@@ -46,20 +46,29 @@ header::after {
     background: rgba(0, 0, 0, 0.4);
 }
 
-header h1, header p {
+header .logo, header a {
     position: relative;
     z-index: 1;
 }
 
-header h1 {
-    font-size: 4.5rem;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+header .logo {
+    width: 350px;
+    height: auto;
+    margin-bottom: 2rem;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
 
-header .lead {
+header .recommend-link {
     font-family: 'Noto Sans JP', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+header .recommend-link:hover {
+    text-decoration: underline;
 }
 
 /* --- Navigation Cards --- */
@@ -192,6 +201,12 @@ footer p {
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
+    header .logo {
+        width: 250px;
+    }
+    header .recommend-link {
+        font-size: 1.5rem;
+    }
     header h1 {
         font-size: 3rem;
     }
